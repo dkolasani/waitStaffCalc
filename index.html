@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+   
+  
+  </head>
+
+  <body ng-app="app">
+   <h1>  Wait Staff calculator </h1>
+   
+   <div ng-controller="AppCtrl as vm">
+     <h3> Enter Meal Details </h3>
+      <form name="calc" novalidate>
+       <span><h4>Base Meal Price:$ </span><input type = "number" ng-model = "vm.bMealPrice" spaceholder="0" /></h4>
+       <span ng-show="calc.vm.bMealPrice.$invalid" ></span>
+      <span> <h4>Tax Rate: </span><input type = "number" ng-model = "vm.taxRate" spaceholder="0"/></h4>
+      <span> <h4> Tip Percentage: </span> <input type = "number" ng-model = "vm.tipPercentage" spaceholder="0"/></h4>
+       <button type="submit" ng-click="vm.submit()">Submit</button>
+       <button type="cancel" ng-click="vm.cancel()">Cancel</button>
+       
+        
+        <h1> Customer Charges</h1>
+        <span> <h4>Sub Total:$</h4></span>  {{vm.subtotal}} 
+         <h4>Tip:$</h4> {{vm.tip}}
+          <h4>Total:$ </h4>{{vm.total}}
+           
+        <H1> My earnings info
+          <h4>Tip Total:$</h4> {{vm.tipTotal}}
+          <h4>Meal Count:$ </h4> {{vm.mealCount}}
+          <h4>Average Tip Per Meal:$ </h4> {{vm.avgTipMeal}}
+
+        </form>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+      <script src="script.js"></script>
+ 
+   </div>
+  </body>
+
+</html>
+
+
+  
